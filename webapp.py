@@ -28,8 +28,11 @@ st.title("TO-DO Web App")
 for index, todo in enumerate(todos):
     checkbox = st.checkbox(todo, key=todo)
     if checkbox:
-        edit_button = st.button(label='Edit', key='Edit', )
-        complete_button = st.button(label='Complete', key='complete', on_click=complete_onclick, args=(todo,))
+        col1,col2=st.columns(2)
+        with col1:
+            edit_button = st.button(label='Edit', key='Edit', )
+        with col2:
+            complete_button = st.button(label='Complete', key='complete', on_click=complete_onclick, args=(todo,))
         if edit_button:
             todo = todos[index].strip('\n')
             edit_todo = st.text_input(label="", value=todo, key="edit", on_change=edit_onchange,
