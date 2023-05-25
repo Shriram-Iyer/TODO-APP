@@ -28,7 +28,7 @@ st.title("TO-DO Web App")
 for index, todo in enumerate(todos):
     checkbox = st.checkbox(todo, key=todo)
     if checkbox:
-        col1,col2=st.columns(2)
+        col1, col2 = st.columns(2)
         with col1:
             edit_button = st.button(label='Edit', key='Edit', )
         with col2:
